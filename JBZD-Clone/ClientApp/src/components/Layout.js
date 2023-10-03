@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import { NavMenu } from './NavMenu';
+import './Style.css'
 
 export class Layout extends Component {
   static displayName = Layout.name;
 
   render() {
     return (
-      <div>
+      <div className="text-white">
         <NavMenu />
-        <Container>
+        <div className="container-fluid main-content"> 
           {this.props.children}
-        </Container>
+        </div>
       </div>
     );
   }

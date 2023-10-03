@@ -1,47 +1,48 @@
-import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+﻿import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+import logo from "../../public/Images/logo.png"
+import { useEffect, useCallback, useState } from 'react';
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
 
-  constructor (props) {
-    super(props);
+export const NavMenu = () => {
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
+    const links = [
+        {
+            path: "/to-accept",
+            text: "Oczekujące"
+        },
+        {
+            path: "/random",
+            text: "Losowe"
+        }
+    ]
 
-  toggleNavbar () {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
+    const [collapsed, setCollapsed] = useState(false);
 
-  render() {
     return (
-      <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
-          <NavbarBrand tag={Link} to="/">JBZD_Clone</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-            <ul className="navbar-nav flex-grow">
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-              </NavItem>
-            </ul>
-          </Collapse>
-        </Navbar>
-      </header>
-    );
-  }
+        <header>
+            <Navbar className="navbar-expand-sm navbar-toggleable-sm own-navbar-bg-color" container>
+                <NavbarBrand tag={Link} to="/">
+                    <img src={logo} alt="JBZD-Clone logo" />
+                </NavbarBrand>
+                <NavbarToggler onClick={() => {setCollapsed(collapsed => !collapsed)}} className="mr-2" />
+
+                 <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={collapsed} navbar>
+                      <ul className="navbar-nav flex-grow">
+
+                           {links.map(link_ref => 
+                               <NavItem key={link_ref.path}>
+                                    <NavLink  tag={Link} className="text-white" to={link_ref.path}> {link_ref.text} </NavLink>
+                               </NavItem>
+                           )}
+                            
+                           {/*TODO*/}
+                           {/*<CoinLink />*/}
+
+                        </ul>
+                  </Collapse>
+            </Navbar>
+        </header>
+    )
 }
