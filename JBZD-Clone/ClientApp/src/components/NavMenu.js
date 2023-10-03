@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 import logo from "../../public/Images/logo.png"
-import { useEffect, useCallback, useState } from 'react';
+import { useState } from 'react';
 
 
 export const NavMenu = () => {
@@ -22,7 +22,7 @@ export const NavMenu = () => {
 
     return (
         <header>
-            <Navbar className="navbar-expand-sm navbar-toggleable-sm own-navbar-bg-color" container>
+            <Navbar className="navbar-expand-sm navbar-toggleable-sm own-navbar" container>
                 <NavbarBrand tag={Link} to="/">
                     <img src={logo} alt="JBZD-Clone logo" />
                 </NavbarBrand>

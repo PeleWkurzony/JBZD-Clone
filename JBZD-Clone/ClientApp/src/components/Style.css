@@ -5,4 +5,18 @@
 .main-content {
     background-color: #252525;
     padding: 0 33%;
+    min-height: 1000px;
+}
+
+.footer {
+    background-color: #151515;
+}
+
+.footer-link {
+    color: #c03e3e;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #c03e3e;
 }

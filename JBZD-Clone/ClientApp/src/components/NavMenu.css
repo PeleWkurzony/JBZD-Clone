@@ -17,6 +17,8 @@ html {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-.own-navbar-bg-color {
+/* Own css styles*/
+
+.own-navbar {
     background-color: #181818;
 }
