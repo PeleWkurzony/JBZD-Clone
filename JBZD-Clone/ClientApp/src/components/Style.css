@@ -20,3 +20,17 @@
 .footer-link:hover {
     color: #c03e3e;
 }
+
+.coins {
+    background-color: #4f4f4f;
+    border-radius: 10px;
+    height: 36px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coins > b {
+    padding-left: 10px;
+}

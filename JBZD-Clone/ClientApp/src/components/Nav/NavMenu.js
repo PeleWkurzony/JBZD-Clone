@@ -1,8 +1,9 @@
 ﻿import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
-import logo from "../../public/Images/logo.png"
+import logo from "../../../public/Images/logo.png"
 import { useState } from 'react';
+import { Coins } from "./Coins";
 
 
 export const NavMenu = () => {
@@ -37,8 +38,7 @@ export const NavMenu = () => {
                                </NavItem>
                            )}
                             
-                           {/*TODO*/}
-                           {/*<CoinLink />*/}
+                           <Coins coins={0}/>
 
                         </ul>
                   </Collapse>

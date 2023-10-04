@@ -1,6 +1,6 @@
-import { Home } from "./components/Home";
-import { ToAcceptPostPage } from "./components/ToAcceptPostPage";
-import { RandomPostPage } from "./components/RandomPostPage";
+import { Home } from "./components/Main/Home";
+import { ToAcceptPostPage } from "./components/Main/ToAcceptPostPage";
+import { RandomPostPage } from "./components/Main/RandomPostPage";
 import { TermsOfService } from "./components/TermsOfService";
 import { Contact } from "./components/Contact";
 import { Changelog } from "./components/Changelog";
