@@ -1,26 +1,44 @@
-import React, { Component } from 'react';
+﻿import { PostComponent } from './PostComponent';
+import testImage from '../../../public/Images/test.PNG';
 
-export class Home extends Component {
-  static displayName = Home.name;
+const post1 = {
+          post_id: '756',
+          author_id: '123',
+          title: 'test',
+          category: 'Główny',
+          author_name: 'admin',
+          comments_number: 12,
+          publish_date: '123',
+          text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+          plus: 44,
+          gold_badges: 1,
+          silver_badges: 0,
+          stone_badges: 3
+      }
+      const post2 = {
+          post_id: '756',
+          author_id: '123',
+          title: 'test',
+          category: 'Główny',
+          author_name: 'admin',
+          comments_number: 12,
+          publish_date: '123',
+          image: testImage,
+          plus: 44,
+          gold_badges: 1,
+          silver_badges: 65,
+          stone_badges: 3
+      }
 
-  render() {
+
+export const Home = () => {
+
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
+      <main>
+
+        <PostComponent postDetails={post1} />
+        <PostComponent postDetails={post2} />
+
+      </main>
     );
-  }
 }

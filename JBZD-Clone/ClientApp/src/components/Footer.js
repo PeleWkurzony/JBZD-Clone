@@ -26,10 +26,10 @@ export const Footer = () => {
     ]
 
     return (
-        <div className="footer d-flex justify-content-center py-3">
+        <footer className="footer d-flex justify-content-center py-3">
             { links.map(link_ref => 
                 <Link className="footer-link mx-2" key={link_ref.path} to={link_ref.path}> {link_ref.text} </Link>
             )}
-        </div>
+        </footer>
     )
 }
